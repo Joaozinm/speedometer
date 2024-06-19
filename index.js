@@ -25,13 +25,14 @@ allRides.forEach(async ([id, value])=>{
     durationDiv.innerText = getDuration(ride)
 
     const dateDiv = document.createElement("div")
-    date.innerText = getStartDate(ride)
+    dateDiv.innerText = getStartDate(ride)
 
 
     itemElement.appendChild(cityDiv)
     itemElement.appendChild(maxSpeedDiv)
     itemElement.appendChild(distanceDiv)
     itemElement.appendChild(durationDiv)
+    itemElement.appendChild(dateDiv)
 
     rideListElement.appendChild(itemElement)
 
@@ -108,5 +109,15 @@ function getDuration(ride) {
 }
 
 function getStartDate(ride) {
-    const d = new Date()
+    const d = new Date(ride.startTime)
+
+    const day = d.toLocaleString("en-US", {day: "numeric"})
+    const month = d.toLocaleString("en-US", {month: "short"})
+    const year = d.toLocaleString("en-US", {year: "numeric"})
+
+    const hour = d.toLocaleString("en-US", {hour: "2-digit"})
+    const minute = d.toLocaleString("en-US", {minute: "2-digit"})
+
+
+    return `${hour}:${minute} - ${month} ${day}, ${year}`
 }
