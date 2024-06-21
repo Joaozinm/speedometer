@@ -6,6 +6,9 @@
     <title>Ride</title>
     <link rel="stylesheet" href="./CSS/detail.css">
     <link rel="stylesheet" href="./global.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""/>
 </head>
 <body>
 
@@ -21,14 +24,17 @@
         <div class="d-flex-data">
             <div id="data">
             </div>
-            <button class="btn-delete"><span class="del-name">Delete</span></button>
+            <button id="deleteBtn" class="btn-delete"><span class="del-name">Delete</span></button>
         </div>
 
 
     </div>
 
 
-
+     <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+        crossorigin=""></script>
 
     <script src="./storage.js"></script>
     <script src="./dataManager.js"></script>

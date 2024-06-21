@@ -38,5 +38,7 @@ stopBtn.addEventListener("click", ()=>{
     currentRide = null
     stopBtn.classList.add("d-none")
     startBtn.classList.remove("d-none")
+    
+    window.location.href = "./"
 
 })
